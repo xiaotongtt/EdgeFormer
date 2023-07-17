@@ -96,7 +96,7 @@ class SEPS(nn.Module):
         
         self.var_conv = nn.Sequential(*[
             SobelConv2d(n_feats, n_feats), nn.ELU(),
-            conv(n_feats, n_feats, kernel_size),
+            conv(n_feats, n_feats, kernel_size), nn.ELU(),
             conv(n_feats, 2, kernel_size)
         ])
 

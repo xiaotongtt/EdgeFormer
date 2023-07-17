@@ -514,7 +514,8 @@ class EdgeformerBody(nn.Module):
 
         if torch.sum(mask) == 0:
             self.set_flops(0)
-            return x, self.flops
+            # return x, self.flops
+            return x
 
         if torch.sum(mask != 1.0) == 0:
             index = torch.randperm(mask.shape[1])[:mask.shape[1]//2]
